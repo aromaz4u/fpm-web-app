@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: fpm-video-backend
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: RUNWAYML_API_SECRET
+        sync: false
+      - key: FAL_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: PORT
+        value: 8787
